@@ -31,14 +31,29 @@
     background: brown;
     width: 100vw;
     height: 20vh;
-    font-family: 'Comfortaa', cursive;;
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    color: white;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+   
 }
+
+/* .title {
+    font-family: 'Comfortaa', cursive;
+    font-size: 2rem;
+    color: white;
+    padding: 3rem;
+} */
 
 
 .mainBody {
     margin: 3rem;
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
+
