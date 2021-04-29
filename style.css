@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+  }
+  
+  ol,
+  ul {
+    list-style: none;
+  }
+  
+  html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+ /*=================================================
+ 
+ 
+ ===================================================*/
+
+
+.navHeader {
+    background: brown;
+    width: 100vw;
+    height: 20vh;
+    font-family: 'Comfortaa', cursive;;
+}
+
+
+.mainBody {
+    margin: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
