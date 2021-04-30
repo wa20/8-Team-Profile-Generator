@@ -27,22 +27,46 @@
 
  /*=================================================
  
- 
  ===================================================*/
 
 
+ 
 .navHeader {
     background: brown;
     width: 100vw;
     height: 20vh;
-    font-family: 'Comfortaa', cursive;
-    font-size: 2rem;
-    color: white;
-    padding: 3rem;
+ 
     display: flex;
     align-items: center;
+    position: sticky;
+    z-index: 1;
    
 }
+
+@media (min-width: 479px) {
+    .navHeader {
+        font-family: 'Comfortaa', cursive;
+        font-size: 4rem;
+        color: white;
+        padding: 3rem;
+    }
+}
+
+
+
+@media (max-width: 480px) { 
+    .navHeader {
+        font-family: 'Comfortaa', cursive;
+        font-size: 2rem;
+        color: white;
+        padding: 2rem;
+        
+    }
+}
+
+ /*=================================================
+ 
+ ===================================================*/
 
 /* .title {
     font-family: 'Comfortaa', cursive;
@@ -53,6 +77,7 @@
 
 
 .mainBody {
+    margin-top: 5rem;
     margin: 3rem;
     padding: 2rem;
     display: flex;
@@ -61,3 +86,6 @@
     justify-content: center;
 }
 
+#profileCard:hover{
+transform: scale(1.3);
+}
