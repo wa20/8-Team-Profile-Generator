@@ -1,3 +1,4 @@
+const profileCard = getElementById('profileCard');
 
 function renderIcon(Icon) {
     if (teamMemebr === "Manager") {
@@ -32,8 +33,7 @@ function generateProfile(data) {
     </div>
     <div class="content">
     <div class="header">${data.name}</div>
-        
-
+    
     <div class="ui middle aligned animated divided list">
     <div class="item">
     <img class="ui avatar image" src="./assets/email_icon.png" />

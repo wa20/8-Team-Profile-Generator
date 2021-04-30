@@ -58,7 +58,7 @@
     .navHeader {
         height: 15vh;
         font-family: 'Comfortaa', cursive;
-        font-size: 3rem;
+        font-size: 2rem;
         color: white;
         padding: 2rem;
         
@@ -68,13 +68,6 @@
  /*=================================================
  
  ===================================================*/
-
-/* .title {
-    font-family: 'Comfortaa', cursive;
-    font-size: 2rem;
-    color: white;
-    padding: 3rem;
-} */
 
 
 .mainBody {
@@ -87,6 +80,3 @@
     justify-content: center;
 }
 
-#profileCard:hover{
-transform: scale(1.3);
-}
