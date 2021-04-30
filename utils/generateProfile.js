@@ -51,7 +51,7 @@ function generateProfile(data) {
     </div>
 
     <div class="extra content">
-    <span class="right floated">${data.dateJoined}</span>
+    <span class="right floated">Joined in ${data.dateJoined}</span>
     </div>
 </li>
 `;
