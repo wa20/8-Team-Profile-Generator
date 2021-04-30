@@ -24,6 +24,13 @@ const profileGenerator = () => {
             },
           },
 
+          {
+            type: "list",
+            name: "Icon",
+            message: "Choose your license for your project: ",
+            choices: ["None", "Manager", "Engineer", "Intern"],
+          },
+
         
         {
             type: "input",
@@ -75,6 +82,8 @@ const profileGenerator = () => {
               return true;
             },
           },
+
+
 
 
 
