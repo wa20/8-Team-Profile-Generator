@@ -34,17 +34,17 @@
 .navHeader {
     background: brown;
     width: 100vw;
-    height: 20vh;
- 
     display: flex;
     align-items: center;
-    position: sticky;
+    justify-content: center;
+    /* position: fixed; */
     z-index: 1;
    
 }
 
-@media (min-width: 479px) {
+@media (min-width: 700px) {
     .navHeader {
+        height: 20vh;
         font-family: 'Comfortaa', cursive;
         font-size: 4rem;
         color: white;
@@ -54,10 +54,11 @@
 
 
 
-@media (max-width: 480px) { 
+@media (max-width: 699px) { 
     .navHeader {
+        height: 15vh;
         font-family: 'Comfortaa', cursive;
-        font-size: 2rem;
+        font-size: 3rem;
         color: white;
         padding: 2rem;
         
