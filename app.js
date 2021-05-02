@@ -105,17 +105,16 @@ const generateEngineer = () => {
       },
         
     ]). then((data) =>{
-        const engineerCard = new generateProfile({ 
-            id: data.id,
-            icon: data.icon,
-            name: data.name,
-            email: data.email,
-            gitHubLink: data.gitHubLink,
-            dateJoined: data.dataJoined   
-        })
-            profile.push(engineerCard);
-            addTeamMember();
-    })
+          const engineer = new Engineer(
+            data.id, 
+            data.name, 
+            data.gitHubLink, 
+            data.dateJoined
+            )
+              profile.push(manager);
+              addTeamMember()
+  
+      })
 
 }
 
