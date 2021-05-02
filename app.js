@@ -15,19 +15,8 @@ const writeToFile = (fileName, data) => {
 const profileGenerator = () => {
   inquirer
     .prompt([
-      {
-        type: "input",
-        name: "id",
-        message: "Enter profile ID number: ",
-        validate: function (userAnswer) {
-          if (userAnswer !== typeof Number) {
-            return console.log("Please enter a number");
-          }
-          return true;
-        },
-      },
 
-      {
+        {
         type: "list",
         name: "Icon",
         message: "Choose your license for your project: ",
@@ -40,6 +29,20 @@ const profileGenerator = () => {
         },
       },
 
+
+      {
+        type: "input",
+        name: "id",
+        message: "Enter profile ID number: ",
+        validate: function (userAnswer) {
+          if (userAnswer !== typeof Number) {
+            return console.log("Please enter a number");
+          }
+          return true;
+        },
+      },
+
+    
       {
         type: "input",
         name: "name",
@@ -59,18 +62,6 @@ const profileGenerator = () => {
         validate: function (userAnswer) {
           if (userAnswer === "") {
             return console.log("Please input link to github profile");
-          }
-          return true;
-        },
-      },
-
-      {
-        type: "input",
-        name: "email",
-        message: "Enter Project Title: ",
-        validate: function (userAnswer) {
-          if (userAnswer === "") {
-            return console.log("Please input Project Title");
           }
           return true;
         },
