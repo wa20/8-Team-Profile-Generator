@@ -13,6 +13,7 @@ const writeToFile = (fileName, data) => {
 
 const profile = [];
 
+const profileGenerator = () => {
 const generateManager = () => { //user is first prompted to input manager details for profile card
   inquirer
     .prompt([
@@ -34,12 +35,12 @@ const generateManager = () => { //user is first prompted to input manager detail
         type: "input",
         name: "id",
         message: "Enter profile ID number: ",
-        validate: function (userAnswer) {
-          if (userAnswer !== typeof Number) {
-            return console.log("Please enter a number");
-          }
-          return true;
-        },
+        // validate: function (userAnswer) {
+        //   if (userAnswer !== typeof Number) {
+        //     return console.log("Please enter a number");
+        //   }
+        //   return true;
+        // },
       },
 
       {
@@ -87,6 +88,7 @@ const generateManager = () => { //user is first prompted to input manager detail
             dateJoined: data.dataJoined   
         })
             profile.push(managerCard);
+            addTeamMember()
 
     })
     
@@ -111,12 +113,12 @@ const generateEngineer = () => {
         type: "input",
         name: "id",
         message: "Enter profile ID number: ",
-        validate: function (userAnswer) {
-          if (userAnswer !== typeof Number) {
-            return console.log("Please enter a number");
-          }
-          return true;
-        },
+        // validate: function (userAnswer) {
+        //   if (userAnswer !== typeof Number) {
+        //     return console.log("Please enter a number");
+        //   }
+        //   return true;
+        // },
       },
 
       {
@@ -165,6 +167,7 @@ const generateEngineer = () => {
             dateJoined: data.dataJoined   
         })
             profile.push(engineerCard);
+            addTeamMember();
     })
 
 }
@@ -187,12 +190,12 @@ const generateIntern = () => {
         type: "input",
         name: "id",
         message: "Enter profile ID number: ",
-        validate: function (userAnswer) {
-          if (userAnswer !== typeof Number) {
-            return console.log("Please enter a number");
-          }
-          return true;
-        },
+        // validate: function (userAnswer) {
+        //   if (userAnswer !== typeof Number) {
+        //     return console.log("Please enter a number");
+        //   }
+        //   return true;
+        // },
       },
 
       {
@@ -240,13 +243,33 @@ const generateIntern = () => {
             gitHubLink: data.gitHubLink,
             dateJoined: data.dataJoined   
         })
-            profile.push(engineerCard);
+            profile.push(internCard);
+            addTeamMember();
     })
 
 }
 
-
-
+const addTeamMember = () => {
+    inquirer.prompt ([
+        {
+        type: "list",
+        name: "addTeamMember",
+        message: "Would like to add another team member: ",
+        choices: ["Engineer","Intern","Done"],
+    }
+]) .then((data) => {
+    if (data.addTeamMember === "Engineer"){
+         generateEngineer()
+    } else
+    if(data.addTeamMember === "Intern"){
+         generateIntern()
+    } else {
+        console.log(profile)
+    }
+})
+}
+generateManager();
+}
 
 
 profileGenerator();
