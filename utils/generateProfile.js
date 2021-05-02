@@ -1,38 +1,10 @@
-// const profileCard = getElementById('profileCard');
-
-// function renderIcon(Icon) {
-//     if (teamMemebr === "Manager") {
-//       return "chess king icon";
-//     } else
-//     if (teamMemebr === "Engineer") {
-//         return "chess bishop icon";
-//     } else 
-//     if (teamMemebr === "Intern") {
-//         return "chess pawn icon";
-//     }
-//   }
-
-
-//   function renderRole(role) {
-//     if (teamMemebr === "Manager") {
-//         return "Manager";
-//       } else
-//       if (teamMemebr === "Engineer") {
-//           return "Engineer";
-//       } else 
-//       if (teamMemebr === "Intern") {
-//           return "Intern";
-//       }
-//   }
+//generate html
 
 function generateTeamHtml(team) {
 
-
-
     function generateManagerHtmlProfile(manager) {
-      return
-  
-    `
+        console.log(manager)
+      return `
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${data.id}</div>
@@ -63,7 +35,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">Joined in ${data.dateJoined}</span>
+        <span class="right floated">Joined in 2013</span>
         </div>
     </li>
     `;
@@ -72,12 +44,59 @@ function generateTeamHtml(team) {
     const htmlStrings = []; 
 
     htmlStrings.push(team.filter(employee => employee.getRole() === "Manager").map(manager => generateManagerHtmlProfile(manager)))
+
+
+    function generateEngineerHtmlProfile(engineer) {
+      console.log(engineer)
+      return `
+    <li class="card">
+        <div class="content">
+        <div class="right floated meta">ID: ${engineer.id}</div>
+        <i class="${engineer.getIcon()}">${engineer.getRole()}</i>
+            
+        </div>
+    
+        <div class="image">
+        <img src="./assets/male_avatar_sq.svg" />
+        </div>
+        <div class="content">
+        <div class="header">${engineer.getName()}</div>
+        
+        <div class="ui middle aligned animated divided list">
+        <div class="item">
+        <img class="ui avatar image" src="./assets/email_icon.png" />
+        <div class="content">
+        <a class="header" href="${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a>
+        </div>
+        </div>
+        <div class="item">
+                <img class="ui avatar image" src="./assets/github-512.png" />
+                <div class="content">
+                  <a class="header" href="${gitHubLink}" target="_blank">${}</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="extra content">
+        <span class="right floated">${}</span>
+        </div>
+    </li>
+    `;
+    }
+
+    function generateManagerHtmlProfile(intern) {
+        
+    }
+
+    return htmlStrings.join("")
+
 }
   
 
 module.exports = team => {
-    return `return 
-    `
+    console.log(team)
+    return `
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -112,5 +131,4 @@ module.exports = team => {
     </html>
     
     `
-    }`
 };
