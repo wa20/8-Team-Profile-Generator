@@ -3,7 +3,6 @@ console.log("Create Profile");
 const fs = require("fs");
 const util = require("util");
 const inquirer = require("inquirer");
-
 const generateProfile = require("./utils/generateProfile");
 
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -12,15 +11,17 @@ const writeToFile = (fileName, data) => {
   writeFileAsync(fileName, data);
 };
 
-const profileGenerator = () => {
+const profile = [];
+
+const generateManager = () => { //user is first prompted to input manager details for profile card
   inquirer
     .prompt([
 
         {
         type: "list",
         name: "Icon",
-        message: "Choose your license for your project: ",
-        choices: ["Manager", "Engineer", "Intern"],
+        message: "Select Manager to begin: ",
+        choices: ["Manager"],
         validate: function (userAnswer) {
           if (userAnswer === "") {
             return console.log("Please make choice");
@@ -28,7 +29,6 @@ const profileGenerator = () => {
           return true;
         },
       },
-
 
       {
         type: "input",
@@ -42,7 +42,6 @@ const profileGenerator = () => {
         },
       },
 
-    
       {
         type: "input",
         name: "name",
@@ -78,8 +77,25 @@ const profileGenerator = () => {
           return true;
         },
       },
-    ])
-    .then((data) => writeToFile("...", generateProfile(data)));
+    ]). then((data) =>{
+        const managerCard = new generateProfile({
+            
+            id: data.id,
+            icon: data.icon,
+            name: data.name,
+            email: data.email,
+            gitHubLink: data.gitHubLink,
+            dateJoined: data.dataJoined
+            
+        }) 
+        
+    })
+    
 };
 
 profileGenerator();
+
+
+
+
+.then((data) => writeToFile("...", generateManager(data)));

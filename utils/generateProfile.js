@@ -1,4 +1,4 @@
-const profileCard = getElementById('profileCard');
+// const profileCard = getElementById('profileCard');
 
 function renderIcon(Icon) {
     if (teamMemebr === "Manager") {
@@ -13,18 +13,30 @@ function renderIcon(Icon) {
   }
 
 
+  function renderRole(role) {
+    if (teamMemebr === "Manager") {
+        return "Manager";
+      } else
+      if (teamMemebr === "Engineer") {
+          return "Engineer";
+      } else 
+      if (teamMemebr === "Intern") {
+          return "Intern";
+      }
+  }
+
 
   
-
-
 function generateProfile(data) {
   return;
+  
+  dataArray.map()
 
 `
 <li class="card">
     <div class="content">
     <div class="right floated meta">ID: ${data.id}</div>
-    <i class="${renderIcon(data.icon)}"></i>
+    <i class="${renderIcon(data.icon)}">${renderRole(data.role)}</i>
         
     </div>
 
