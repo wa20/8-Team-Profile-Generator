@@ -72,7 +72,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${engineer.githubLink}" target="_blank">${engineer.githubLink}</a>
+                  <a class="header" href="${engineer.getGithubLink()}" target="_blank">${engineer.getGithubLink()}</a>
                 </div>
             </div>
         </div>
