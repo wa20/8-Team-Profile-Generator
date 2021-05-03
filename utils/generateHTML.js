@@ -28,9 +28,9 @@ return
     </header>
 
     <section class="mainBody">
-    
+    <ul class="ui link cards" id="profileCard">
     ${join.profile.here} 
-
+    </ul>
     </section>
 
         

@@ -2,6 +2,8 @@
 
 function generateTeamHtml(team) {
 
+   const htmlStrings = []; 
+
     function generateManagerHtmlProfile(manager) {
         console.log(manager)
       return `
@@ -28,7 +30,7 @@ function generateTeamHtml(team) {
         <div class="item">
         <img class="ui avatar image" src="" />
         <div class="content">
-        <div class="header" >${manger.getOfficeNumber()}</div>
+        <div class="header" >${manager.getOfficeNumber()}</div>
         </div>
         </div>
         </div>
@@ -40,8 +42,6 @@ function generateTeamHtml(team) {
     </li>
     `;
     }
-
-    const htmlStrings = []; 
 
     htmlStrings.push(team.filter(employee => employee.getRole() === "Manager").map(manager => generateManagerHtmlProfile(manager)))
 
@@ -72,7 +72,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${engineer.getGithubLink()}" target="_blank">${engineer. getGithubLink()}</a>
+                  <a class="header" href="${engineer.githubLink}" target="_blank">${engineer.githubLink}</a>
                 </div>
             </div>
         </div>
@@ -85,8 +85,10 @@ function generateTeamHtml(team) {
     `;
     }
 
-    function generateManagerHtmlProfile(intern) {
-      console.log(engineer)
+    htmlStrings.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineerHtmlProfile(engineer)))
+
+    function generateInternHtmlProfile(intern) {
+      // console.log(engineer)
       return `
     <li class="card">
         <div class="content">
@@ -111,7 +113,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${intern.getGithubLink()}" target="_blank">${intern.getGithubLink()}</a>
+                  <a class="header" href="${intern.githubLink}" target="_blank">${intern.githubLink}</a>
                 </div>
             </div>
         </div>
@@ -124,7 +126,11 @@ function generateTeamHtml(team) {
     `;
     }
 
+    htmlStrings.push(team.filter(employee => employee.getRole() === "Intern").map(intern => generateInternHtmlProfile(intern)))
+
     return htmlStrings.join("")
+
+
 
 }
   
