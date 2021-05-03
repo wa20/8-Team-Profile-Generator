@@ -5,6 +5,8 @@ const util = require("util");
 const inquirer = require("inquirer");
 const generateProfile = require("./utils/generateProfile");
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 // const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -142,6 +144,12 @@ const profileGenerator = () => {
           type: "input",
           name: "name",
           message: "Enter name: ",
+        },
+
+        {
+          type: "input",
+          name: "email",
+          message: "Enter Email: ",
         },
 
         {
