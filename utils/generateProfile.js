@@ -10,7 +10,7 @@ function generateTeamHtml(team) {
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${manager.id}</div>
-        <i class="${manager.getIcon()}"> ${manager.getRole()}</i>
+        <i class="${manager.getIcon()}">: ${manager.getRole()}</i>
             
         </div>
     
@@ -52,7 +52,7 @@ function generateTeamHtml(team) {
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${engineer.id}</div>
-        <i class="${engineer.getIcon()}">${engineer.getRole()}</i>
+        <i class="${engineer.getIcon()}">: ${engineer.getRole()}</i>
             
         </div>
     
@@ -93,7 +93,7 @@ function generateTeamHtml(team) {
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${intern.id}</div>
-        <i class="${intern.getIcon()}">${intern.getRole()}</i>
+        <i class="${intern.getIcon()}">: ${intern.getRole()}</i>
             
         </div>
     
