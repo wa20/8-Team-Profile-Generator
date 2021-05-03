@@ -10,7 +10,7 @@ function generateTeamHtml(team) {
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${manager.id}</div>
-        <i class="${manager.getIcon()}">${manager.getRole()}</i>
+        <i class="${manager.getIcon()}"> ${manager.getRole()}</i>
             
         </div>
     
@@ -37,7 +37,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">${manager.getYearJoined()}</span>
+        <span class="right floated">Date Joined: ${manager.getYearJoined()}</span>
         </div>
     </li>
     `;
@@ -79,7 +79,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">${engineer.yearJoined}</span>
+        <span class="right floated">Date Joined: ${engineer.yearJoined}</span>
         </div>
     </li>
     `;
@@ -120,7 +120,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">${intern.yearJoined}</span>
+        <span class="right floated">Date Joined: ${intern.yearJoined}</span>
         </div>
     </li>
     `;
@@ -161,9 +161,13 @@ module.exports = team => {
         </header>
     
         <section class="mainBody">
+
+        <ul class="ui link cards" id="profileCard">
         
         ${generateTeamHtml(team)} 
-    
+
+        </ul>
+
         </section>
     
             
