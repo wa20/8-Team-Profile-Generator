@@ -21,7 +21,7 @@ First ensure that you have node.js and npm installed on your devcie. Then open u
 
 ## Usage
 Please view below:
- <video src="./assets/team-profile-demo.mov"></video>
+"./assets/team-profile-demo.mov"
 
 ## Collaborators
 none
