@@ -7,7 +7,7 @@ function generateTeamHtml(team) {
       return `
     <li class="card">
         <div class="content">
-        <div class="right floated meta">ID: ${data.id}</div>
+        <div class="right floated meta">ID: ${manager.id}</div>
         <i class="${manager.getIcon()}">${manager.getRole()}</i>
             
         </div>
@@ -35,7 +35,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">Joined in 2013</span>
+        <span class="right floated">${manager.yearJoined}</span>
         </div>
     </li>
     `;
@@ -72,21 +72,56 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${gitHubLink}" target="_blank">${}</a>
+                  <a class="header" href="${engineer.getGithubLink()}" target="_blank">${engineer. getGithubLink()}</a>
                 </div>
             </div>
         </div>
         </div>
     
         <div class="extra content">
-        <span class="right floated">${}</span>
+        <span class="right floated">${engineer.yearJoined}</span>
         </div>
     </li>
     `;
     }
 
     function generateManagerHtmlProfile(intern) {
+      console.log(engineer)
+      return `
+    <li class="card">
+        <div class="content">
+        <div class="right floated meta">ID: ${intern.id}</div>
+        <i class="${intern.getIcon()}">${intern.getRole()}</i>
+            
+        </div>
+    
+        <div class="image">
+        <img src="./assets/male_avatar_sq.svg" />
+        </div>
+        <div class="content">
+        <div class="header">${intern.getName()}</div>
         
+        <div class="ui middle aligned animated divided list">
+        <div class="item">
+        <img class="ui avatar image" src="./assets/email_icon.png" />
+        <div class="content">
+        <a class="header" href="${intern.getEmail()}" target="_blank">${intern.getEmail()}</a>
+        </div>
+        </div>
+        <div class="item">
+                <img class="ui avatar image" src="./assets/github-512.png" />
+                <div class="content">
+                  <a class="header" href="${intern.getGithubLink()}" target="_blank">${intern.getGithubLink()}</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="extra content">
+        <span class="right floated">${intern.yearJoined}</span>
+        </div>
+    </li>
+    `;
     }
 
     return htmlStrings.join("")
