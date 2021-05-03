@@ -28,7 +28,7 @@ function generateTeamHtml(team) {
         </div>
         </div>
         <div class="item">
-        <img class="ui avatar image" src="" />
+        <img class="ui avatar image" src="./assets/phone_icon.png" />
         <div class="content">
         <div class="header" >${manager.getOfficeNumber()}</div>
         </div>
@@ -113,7 +113,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${intern.githubLink}" target="_blank">${intern.githubLink}</a>
+                  <a class="header" href="${intern.getGithubLink()}" target="_blank">${intern.getGithubLink()}</a>
                 </div>
             </div>
         </div>

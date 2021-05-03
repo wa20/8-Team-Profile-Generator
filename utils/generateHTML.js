@@ -1,8 +1,6 @@
 
 function generateHTML() {
 
-    
-
 return 
 `
 <!DOCTYPE html>
@@ -28,16 +26,19 @@ return
     </header>
 
     <section class="mainBody">
+   
     <ul class="ui link cards" id="profileCard">
+
     ${join.profile.here} 
+
     </ul>
+    
     </section>
 
         
  
   </body>
 </html>
-
 `
 }
 module.exports = generateHTML
