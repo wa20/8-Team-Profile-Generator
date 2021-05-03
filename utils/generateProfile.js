@@ -37,7 +37,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="extra content">
-        <span class="right floated">${manager.yearJoined}</span>
+        <span class="right floated">${manager.getYearJoined()}</span>
         </div>
     </li>
     `;
