@@ -1,12 +1,11 @@
 //generate html
 
 function generateTeamHtml(team) {
+  const htmlStrings = [];
 
-   const htmlStrings = []; 
-
-    function generateManagerHtmlProfile(manager) {
-        console.log(manager)
-      return `
+  function generateManagerHtmlProfile(manager) {
+    console.log(manager);
+    return `
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${manager.id}</div>
@@ -41,14 +40,17 @@ function generateTeamHtml(team) {
         </div>
     </li>
     `;
-    }
+  }
 
-    htmlStrings.push(team.filter(employee => employee.getRole() === "Manager").map(manager => generateManagerHtmlProfile(manager)))
+  htmlStrings.push(
+    team
+      .filter((employee) => employee.getRole() === "Manager")
+      .map((manager) => generateManagerHtmlProfile(manager))
+  );
 
-
-    function generateEngineerHtmlProfile(engineer) {
-      console.log(engineer)
-      return `
+  function generateEngineerHtmlProfile(engineer) {
+    console.log(engineer);
+    return `
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${engineer.id}</div>
@@ -72,7 +74,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${engineer.getGithubLink()}" target="_blank">${engineer.getGithubLink()}</a>
+                  <a class="header" href="https://github.com/${engineer.gitHubId()}" target="_blank">${engineer.gitHubId()}</a>
                 </div>
             </div>
         </div>
@@ -83,13 +85,17 @@ function generateTeamHtml(team) {
         </div>
     </li>
     `;
-    }
+  }
 
-    htmlStrings.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineerHtmlProfile(engineer)))
+  htmlStrings.push(
+    team
+      .filter((employee) => employee.getRole() === "Engineer")
+      .map((engineer) => generateEngineerHtmlProfile(engineer))
+  );
 
-    function generateInternHtmlProfile(intern) {
-      // console.log(engineer)
-      return `
+  function generateInternHtmlProfile(intern) {
+    // console.log(engineer)
+    return `
     <li class="card">
         <div class="content">
         <div class="right floated meta">ID: ${intern.id}</div>
@@ -113,7 +119,7 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="${intern.getGithubLink()}" target="_blank">${intern.getGithubLink()}</a>
+                  <a class="header" href="https://github.com/${engineer.gitHubId()}" target="_blank">${intern.gitHubId()}</a>
                 </div>
             </div>
         </div>
@@ -124,20 +130,20 @@ function generateTeamHtml(team) {
         </div>
     </li>
     `;
-    }
+  }
 
-    htmlStrings.push(team.filter(employee => employee.getRole() === "Intern").map(intern => generateInternHtmlProfile(intern)))
+  htmlStrings.push(
+    team
+      .filter((employee) => employee.getRole() === "Intern")
+      .map((intern) => generateInternHtmlProfile(intern))
+  );
 
-    return htmlStrings.join("")
-
-
-
+  return htmlStrings.join("");
 }
-  
 
-module.exports = team => {
-    console.log(team)
-    return `
+module.exports = (team) => {
+  console.log(team);
+  return `
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -162,7 +168,7 @@ module.exports = team => {
     
         <section class="mainBody">
 
-        <ul class="ui link cards" id="profileCard">
+        <ul class="ui link cards cardContainer" id="profileCard">
         
         ${generateTeamHtml(team)} 
 
@@ -175,5 +181,5 @@ module.exports = team => {
       </body>
     </html>
     
-    `
+    `;
 };
