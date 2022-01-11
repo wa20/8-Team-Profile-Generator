@@ -1,7 +1,7 @@
 console.log("Create Profile");
 const path = require("path");
 const fs = require("fs");
-const util = require("util");
+// const util = require("util");
 const inquirer = require("inquirer");
 const generateProfile = require("./utils/generateProfile");
 const Manager = require("./lib/Manager");
@@ -13,6 +13,7 @@ const Intern = require("./lib/Intern");
 // const writeToFile = (fileName, data) => {
 //   writeFileAsync(fileName, data);
 // };
+
 const htmlPath = path.join(__dirname, "team.html");
 const profile = [];
 
@@ -41,6 +42,14 @@ const profileGenerator = () => {
         },
 
         {
+          type: "list",
+          name: "avatar",
+          message: "Select an Avatar",
+          choices: ["male", "female"]
+
+        },
+
+        {
           type: "input",
           name: "email",
           message: "Enter Email: ",
@@ -62,6 +71,7 @@ const profileGenerator = () => {
         const manager = new Manager(
           data.id,
           data.name,
+          data.avatar,
           data.email,
           data.phoneNumber,
           data.dateJoined
@@ -101,7 +111,7 @@ const profileGenerator = () => {
 
         {
           type: "input",
-          name: "gitHubLink",
+          name: "gitHubId",
           message: "Enter link to github profile: ",
         },
 
@@ -116,7 +126,7 @@ const profileGenerator = () => {
           data.id,
           data.name,
           data.email,
-          data.gitHubLink,
+          data.gitHubId,
           data.dateJoined
         );
         profile.push(engineer);
@@ -154,7 +164,7 @@ const profileGenerator = () => {
 
         {
           type: "input",
-          name: "gitHubLink",
+          name: "gitHubId",
           message: "Enter link to github profile: ",
         },
 
@@ -169,7 +179,7 @@ const profileGenerator = () => {
           data.id,
           data.name,
           data.email,
-          data.gitHubLink,
+          data.gitHubId,
           data.dateJoined
         );
         profile.push(intern);

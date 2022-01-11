@@ -14,7 +14,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="image">
-        <img src="./assets/male_avatar_sq.svg" />
+        <img src="./assets/${manager.getAvatar()}_avatar_sq.svg" />
         </div>
         <div class="content">
         <div class="header">${manager.getName()}</div>
@@ -74,14 +74,14 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="https://github.com/${engineer.gitHubId()}" target="_blank">${engineer.gitHubId()}</a>
+                  <a class="header" href="https://github.com/${engineer.getGitHubId()}" target="_blank">${engineer.getGitHubId()}</a>
                 </div>
             </div>
         </div>
         </div>
     
         <div class="extra content">
-        <span class="right floated">Date Joined: ${engineer.yearJoined}</span>
+        <span class="right floated">Date Joined: ${engineer.getYearJoined()}</span>
         </div>
     </li>
     `;
@@ -119,14 +119,14 @@ function generateTeamHtml(team) {
         <div class="item">
                 <img class="ui avatar image" src="./assets/github-512.png" />
                 <div class="content">
-                  <a class="header" href="https://github.com/${engineer.gitHubId()}" target="_blank">${intern.gitHubId()}</a>
+                  <a class="header" href="https://github.com/${intern.getGitHubId()}" target="_blank">${intern.getGitHubId()}</a>
                 </div>
             </div>
         </div>
         </div>
     
         <div class="extra content">
-        <span class="right floated">Date Joined: ${intern.yearJoined}</span>
+        <span class="right floated">Date Joined: ${intern.getYearJoined()}</span>
         </div>
     </li>
     `;
