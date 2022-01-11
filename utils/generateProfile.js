@@ -59,7 +59,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="image">
-        <img src="./assets/male_avatar_sq.svg" />
+        <img src="./assets/${engineer.getAvatar()}_avatar_sq.svg" />
         </div>
         <div class="content">
         <div class="header">${engineer.getName()}</div>
@@ -104,7 +104,7 @@ function generateTeamHtml(team) {
         </div>
     
         <div class="image">
-        <img src="./assets/male_avatar_sq.svg" />
+        <img src="./assets/${intern.getAvatar()}_avatar_sq.svg" />
         </div>
         <div class="content">
         <div class="header">${intern.getName()}</div>
