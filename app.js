@@ -104,6 +104,14 @@ const profileGenerator = () => {
         },
 
         {
+          type: "list",
+          name: "avatar",
+          message: "Select an Avatar",
+          choices: ["male", "female"]
+
+        },
+
+        {
           type: "input",
           name: "email",
           message: "Enter Email: ",
@@ -125,6 +133,7 @@ const profileGenerator = () => {
         const engineer = new Engineer(
           data.id,
           data.name,
+          data.avatar,
           data.email,
           data.gitHubId,
           data.dateJoined
@@ -155,6 +164,13 @@ const profileGenerator = () => {
           name: "name",
           message: "Enter name: ",
         },
+        {
+          type: "list",
+          name: "avatar",
+          message: "Select an Avatar",
+          choices: ["male", "female"]
+
+        },
 
         {
           type: "input",
@@ -178,6 +194,7 @@ const profileGenerator = () => {
         const intern = new Intern(
           data.id,
           data.name,
+          data.avatar,
           data.email,
           data.gitHubId,
           data.dateJoined
