@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "run-test": "jest --verbose test/*",
+
+    "test": "jest --verbose test/*",
     "start": "node app.js",
     "reset": "node reset.js"
   },
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/wa20/8-Team-Profile-Generator#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "jest": "^27.4.7"
   }
 }
